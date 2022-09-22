@@ -1,0 +1,22 @@
+1. Schaffen Sie eine Ordner-Struktur für die vorherige Aufgabe (Bilder, Html Dateien je im eigenen Ordner ) 
+    Wobei im Hauptordner sich nur die main.html befinden sollte.
+
+2. Ergänzen Sie in ihren bisherigen html dateien die links bzw. die Pfade, damit diese mit der neuen Struktur funktionieren.
+
+3. Erstellen Sie eine neue Text.html Datei mit dem Grundgerüst und kopieren z.B. Aus dem Skrip oder Internet einige Textpassagen mit Überschrift (<h1-6>),
+    damit diese soviel Text aufweist, dass diese Scrollbar ist. Verwenden Sie einige Absätze(p) und Zeilenumbrüche (br)
+    Achten Sie auch auf Sonderzeichen.
+
+4. Binden Sie diese Seite in ihre bisherige ein. (Einen Listeneintrag mit Link usw.)
+
+5. Erstellen Sie nun einige Ankerpunkte in der Text datei(Ganz unten, ganz oben) und referenzieren Sie diese sowohl in dem Text 
+    Abschnitt als auch in den Anderen Seiteneinträgen. 
+    (z.B. In einem Absatz)
+
+6. Binden Sie das image_mapping.jpg in die Bilder.html, erstellen Sie 
+    eine Map mit 4 Rechtecken und Verlinken Sie diese 4 mit den jeweiligen
+    Bildern.
+
+7. Erstellen Sie eine neue Tabelle wie in der Tabellen_Aufgabe.PNG abgebildet.
+    (Erstllen Sie zuerst nur die Spalten und Zeilen mit Werten. 
+        Die Formatierung kann später erfolgen.)

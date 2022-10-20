@@ -1,0 +1,28 @@
+body {
+    background-color:beige;
+}
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+  text-align: center;
+}
+ul {
+    font-family: monospace;
+    font-size: larger;
+    font-style: oblique;
+    font-weight: bold;
+}
+div {
+    width: 600px; border: 15px solid green; padding: 50px; margin: 20px;
+}
+p {
+    font-family: "Times New Roman", Times, serif;
+    font-size: 1.3em;
+    font-style: italic;
+}
+a:visited {
+    color: brown;
+}
+a:hover {
+    font-size: larger;
+}

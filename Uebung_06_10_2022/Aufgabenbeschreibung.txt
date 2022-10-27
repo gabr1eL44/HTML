@@ -1,9 +1,0 @@
-1).     
-Erstellen Sie eine main.html mit dem "html-Grundgerüst", in diesem, Erstellen Sie eine Tabelle wie in Beispiel1. 
-(Achten Sie auch hier auf passende Ordnerstruktur)
-2).
-Erstellen Sie je Rezept eine html-datei und formatieren Sie die Rezepte ähnlich zu Beispiel2.
-(Im Rezepte.txt befinden sich die passenden Textpassagen, aber
-Sie können auch andere Rezepte verwenden)
-
-3). Verlinken Sie die Rezepte in der main.html 

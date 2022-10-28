@@ -9,12 +9,12 @@
     <body>
         <div>
             <form action="action_page.php" method="get">
-                <label for="anrede">Andrede</label>
+                <label for="anrede">Anrede</label>
                 <select name="anrede" id="anrede">
                     <option value="auswahl" selected disabled>Auswahl</option>
                     <option value="Herr">Herr</option>
                     <option value="Frau">Frau</option>
-                    <option value="Divers">Divers</option>
+                    <option value="Keine Angabe">Keine Angabe</option>
                 </select>
                 <label for="vorname">Vorname</label>
                 <input type="text" name="vorname" id="vorname" placeholder="Max">
@@ -31,7 +31,7 @@
                     <label for="ort_stadt">Ort / Stadt</label>
                     <input class="nested" type="text" name="ort_stadt" id="ort_stadt" placeholder="Musterhausen">
                 </div>
-                <label for="email">Email <small>Pflichtfeld</small></label>
+                <label for="email">E-Mail <small>Pflichtfeld</small></label>
                 <input type="text" name="email" id="email" placeholder="max.mustermann@mail.com" required>
                 <input class="button" type="submit" name="submit" id="submit" value="Weiter">
             </form>

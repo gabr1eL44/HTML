@@ -15,5 +15,5 @@
     echo "Hausnummer: $hausnummer<br/>";
     echo "Postleitzahl: $postleitzahl<br/>";
     echo "Ort / Stadt: $ort_stadt<br/>";
-    echo "Email: $email";
+    echo "E-mail: $email";
 ?>

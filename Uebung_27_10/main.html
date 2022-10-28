@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="DE">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="mystyle.css">
+        <title>Uebung_06_10</title>
+    </head>
+    <body>
+        <div>
+            <form action="action_page.php" method="get">
+                <label for="anrede">Andrede</label>
+                <select name="anrede" id="anrede">
+                    <option value="auswahl" selected disabled>Auswahl</option>
+                    <option value="Herr">Herr</option>
+                    <option value="Frau">Frau</option>
+                    <option value="Divers">Divers</option>
+                </select>
+                <label for="vorname">Vorname</label>
+                <input type="text" name="vorname" id="vorname" placeholder="Max">
+                <label for="nachname">Nachname <small>Pflichtfeld</small></label>
+                <input type="text" name="nachname" id="nachname" placeholder="Mustermann" required>
+                <div class="nested" id="nested">
+                    <h4><strong>Adressfeld</strong></h4>
+                    <label for="strasse">Strasse</label>
+                    <input class="nested" type="text" name="strasse" id="strasse" placeholder="Musterweg">
+                    <label for="hausnummer">Hausnummer</label>
+                    <input class="nested" type="text" name="hausnummer" id="hausnummer" placeholder="12 / 1">
+                    <label for="postleitzahl">Postleitzahl <small>Pflichtfeld</small></label>
+                    <input class="nested" type="text" name="postleitzahl" id="postleitzahl" placeholder="12345" required>
+                    <label for="ort_stadt">Ort / Stadt</label>
+                    <input class="nested" type="text" name="ort_stadt" id="ort_stadt" placeholder="Musterhausen">
+                </div>
+                <label for="email">Email <small>Pflichtfeld</small></label>
+                <input type="text" name="email" id="email" placeholder="max.mustermann@mail.com" required>
+                <input class="button" type="submit" name="submit" id="submit" value="Weiter">
+            </form>
+        </div>
+    </body>
+</html>

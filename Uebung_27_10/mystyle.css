@@ -1,10 +1,11 @@
 div {
-    margin: 10px auto;
+    margin: 20px auto;
     width: 420px;
     border-radius: 5pt;
     border: 5px;
     background-color: rgb(235, 235, 235);
     padding: 10px;
+    padding-top: 20px;
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
 }
 div.nested {
@@ -16,6 +17,7 @@ div.nested {
 }
 small {
     color: red;
+    font-weight: 600;
     margin-left: 0.2em;
 }
 select {
@@ -42,9 +44,9 @@ input.nested {
 input[type=submit] {
     width: 100%;
     height: 2.5em;
-    border-radius: 3pt;
+    border-radius: 4pt;
     margin: 10px 0px;
-    background-color: rgb(69, 123, 199);
+    background-color: rgb(114, 153, 209);
     color: white;
 }
 h4 {

@@ -6,10 +6,11 @@ td.days {
     background-color: aquamarine;
     width: 150px;
     height: 2em;
+    text-align: center;
 }
 td.hours {
     background-color: antiquewhite;
-    width: 20px;
+    width: 30px;
     height: 2.5em;
 }
 div {

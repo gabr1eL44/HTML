@@ -1,0 +1,13 @@
+div {
+    margin: 10px;
+    padding: 10px;
+    background-color:aquamarine;
+    width: 230px;
+}
+input {
+    margin: 0.5em auto;
+    width: 98%;
+}
+input[type="submit"] {
+    width: 90%;
+}

@@ -1,0 +1,81 @@
+<!-- HTML5-Grundgerüst; hier geht es um den Inhalt und den allgemeinen Aufbau einer Webseite -->
+<!DOCTYPE html>
+<!-- Sprache auf Deutsch setzen -->
+<html lang="de">
+    <!-- Kopf mit Meta-Daten (relevant für Suchmaschinen, Browser...) -->
+    <head>
+        <!-- Unicode-Kodierung (internationaler Zeichensatz) -->
+        <meta charset="UTF-8">
+        <!-- Ausgabe an Bildschirm des jeweiligen Gerätes anpassen -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- Angaben zum Autor -->
+        <meta name="author" content="Stefan Karl">
+        <!-- Titel, der im aktuellen Tab angezeigt wird -->
+        <title></title>
+        <!-- Einbenden eines externen CSS-Stylesheets (relative Pfadangabe) -> Dort wird das Aussehen weitgehend festgelegt -->
+        <link rel="stylesheet" href="../css/mystyle.css">
+    </head>
+    <!-- Hier beginnt der eigentliche Inhalt der Webseite -->
+    <body>
+        <!-- Kopfzeile für das Dokument -->
+        <header"><h1></h1></header>
+        <!-- Navigationsbereich -->
+        <nav>
+            <!-- ungeordnete Liste -->
+            <ul>
+                <!-- Listeneintrag -->
+                <li>
+                    <!-- a-Link mit relativen Pfadangaben zur internen Verlinkung von Webseiten -->
+                    <a href="../main.html" target="_blank">Zurück</a>
+                </li>
+            </ul>
+        </nav>
+
+        <!-- Container für Bilder -->
+        <figure>
+            <!-- Bild einbetten -->
+            <img src="../bilder/default.png" alt="" width="px" usemap="#mymap">
+            <!-- Mapping, um einzlene Bereiche im Bild anklickbar zu machen -->
+            <map name="mymap">
+                <area shape="" coords="" href="" alt="">
+            </map>
+            <figcaption>Titel</figcaption>
+        </figure>
+
+        <!-- Erzeuge Tabellenstruktur; r = Tabellenzeile, td = Tabellenspalte, th = Spaltenname -->
+        <table>
+            <!-- Der Kopf der Tabelle -->
+            <thead>
+                <tr>
+                    <th>
+                    </th>
+                </tr>
+            </thead>
+            <!-- Der Hauptteil der Tabelle -->
+            <tbody>
+                <tr>
+                    <td></td>
+                </tr>
+            </tbody>
+            <!-- Der Fuß der Tabelle  -->
+            <tfoot></tfoot>
+        </table>
+
+        <!-- Stuktur für mehrere Artikel -->
+        <section>
+            <!-- Überschrift -->
+            <header><h1></h1></header>
+            <article>
+                <header>
+                    <h2></h2>
+                </header>
+                <p id="test2" class="test"></p>
+            </article>
+        </section>
+        
+        <!-- Fußzeile für das Dokument -->
+        <footer>
+            <a href="#top">Nach oben</a>
+        </footer>
+    </body>
+</html>

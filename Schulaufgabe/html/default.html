@@ -15,6 +15,8 @@
     </head>
     <!-- Hier beginnt der eigentliche Inhalt der Webseite -->
     <body>
+        <!-- Kopfzeile für das Dokument -->
+        <header"><h1></h1></header>
         <!-- Navigationsbereich -->
         <nav>
             <!-- ungeordnete Liste -->
@@ -22,12 +24,56 @@
                 <!-- Listeneintrag -->
                 <li>
                     <!-- a-Link mit relativen Pfadangaben zur internen Verlinkung von Webseiten -->
-                    <a href="./html/default.html"></a>
+                    <a href="../main.html" target="_blank">Zurück</a>
                 </li>
             </ul>
         </nav>
-        <!-- Allgemeiner Container für HTML-Elemente -->
-        <div>
-        </div>
+
+        <!-- Container für Bilder -->
+        <figure>
+            <!-- Bild einbetten -->
+            <img src="../bilder/default.png" alt="" width="px" usemap="#mymap">
+            <!-- Mapping, um einzlene Bereiche im Bild anklickbar zu machen -->
+            <map name="mymap">
+                <area shape="" coords="" href="" alt="">
+            </map>
+            <figcaption>Titel</figcaption>
+        </figure>
+
+        <!-- Erzeuge Tabellenstruktur; r = Tabellenzeile, td = Tabellenspalte, th = Spaltenname -->
+        <table>
+            <!-- Der Kopf der Tabelle -->
+            <thead>
+                <tr>
+                    <th>
+                    </th>
+                </tr>
+            </thead>
+            <!-- Der Hauptteil der Tabelle -->
+            <tbody>
+                <tr>
+                    <td></td>
+                </tr>
+            </tbody>
+            <!-- Der Fuß der Tabelle  -->
+            <tfoot></tfoot>
+        </table>
+
+        <!-- Stuktur für mehrere Artikel -->
+        <section>
+            <!-- Überschrift -->
+            <header><h1></h1></header>
+            <article>
+                <header>
+                    <h2></h2>
+                </header>
+                <p id="test2" class="test"></p>
+            </article>
+        </section>
+        
+        <!-- Fußzeile für das Dokument -->
+        <footer>
+            <a href="#top">Nach oben</a>
+        </footer>
     </body>
 </html>

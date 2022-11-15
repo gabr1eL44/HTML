@@ -1,19 +1,30 @@
 /* Externes CSS-Style-Sheet; hier geht es um das Aussehen / Design einer Website */
 div {
-    background-color: red;
+    width: 200px;
+    border-radius: 4px;
+    background-color:beige;
+    margin: 5px auto;
+    padding: 10px;
 }
-table {
-    table-layout: fixed;
+table, th, td {
+    table-layout: auto;
     border-collapse: collapse;
-    border-spacing: 0.25em;
-    border-color: 1px solid red;
+    border: 1px solid black;
 }
 section {
-    background-color: beige;
-    text-align: center;
+    background-color:beige;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
 }
 p {
-    font-size: 40px;
-    color: aliceblue;
+    font-size: 14pt;
+    text-align: center;
+}
+input {
+    width: 90%;
+    padding: 0.5em;
+    margin: 5px auto 10px;
+}
+label {
+    font-size: 10pt;
+    font-weight: bold;
 }

@@ -1,0 +1,32 @@
+.grid-container {
+    width: 800px;
+    display: grid;
+    grid-template-areas:
+        'Erstellen sie so'
+        'eine Tabelle bitte'
+        'bis Uhrzeit Uhr';
+    gap: 10px;
+    padding: 10px;
+  }
+
+.item1 { grid-area: Erstellen; }
+.item2 { grid-area: sie; }
+.item3 { grid-area: so; }
+.item4 { grid-area: eine; }
+.item5 { grid-area: Tabelle; }
+.item6 { grid-area: bitte; }
+.item7 { grid-area: bis; }
+.item8 { grid-area: Uhrzeit; }
+.item9 { grid-area: Uhr; }
+
+.grid-container > div {
+  background-color: rgba(255, 255, 255, 0.8);
+  text-align: left;
+  padding: 20px 20px;
+  font-size: 30px;
+  border: 5px solid black;
+}
+
+.item1.hover {
+    background-color: red;
+}

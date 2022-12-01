@@ -1,10 +1,32 @@
+.grid-rainbow {
+  width: 800px;
+  display: grid;
+  grid-template-areas:
+      'test1 test1 test1 test1'
+      'test2 test2 . test3'
+      'test4 test4 test4 test4';
+  padding: 10px;
+}
+
+.grid-rainbow > div {
+  height: 35px;
+  text-align: center;
+  font-size: 30px;
+  align-items: center;
+}
+
+.itemA { grid-area: test1; justify-self: stretch; background-color: blue; }
+.itemB { grid-area: test2; justify-self: stretch; background-color: blueviolet }
+.itemC { grid-area: test3; justify-self: stretch; background-color: yellow; }
+.itemD { grid-area: test4; justify-self: stretch; background-color: green; }
+
 .grid-container {
     width: 800px;
     display: grid;
     grid-template-areas:
         'Erstellen sie so'
         'eine Tabelle bitte'
-        'eine Uhrzeit Uhr';
+        'bis Uhrzeit Uhr';
     gap: 10px;
     padding: 10px;
   }
@@ -15,19 +37,19 @@
   padding: 20px 20px;
   font-size: 30px;
   border: 5px solid black;
-  /* align-items:center; */
+  align-items: center;
 }
 
-.item1 { grid-area: Erstellen; justify-self: start; }
+.item1 { grid-area: Erstellen; }
 .item2 { grid-area: sie; }
-.item3 { grid-area: so; align-self: center; }
+.item3 { grid-area: so; }
 .item4 { grid-area: eine; }
 .item5 { grid-area: Tabelle; }
 .item6 { grid-area: bitte; }
-/* .item7 { grid-area: bis; } */
+.item7 { grid-area: bis; }
 .item8 { grid-area: Uhrzeit; }
 .item9 { grid-area: Uhr; }
 
-.grid-container > div:hover {
-    background-color: red;
+div > div:hover {
+  background-color: red;
 }

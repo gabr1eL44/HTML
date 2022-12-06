@@ -12,7 +12,6 @@
   height: 35px;
   text-align: center;
   font-size: 30px;
-  align-items: center;
 }
 
 .itemA { grid-area: test1; justify-self: stretch; background-color: blue; }
@@ -37,7 +36,6 @@
   padding: 20px 20px;
   font-size: 30px;
   border: 5px solid black;
-  align-items: center;
 }
 
 .item1 { grid-area: Erstellen; }

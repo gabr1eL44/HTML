@@ -1,6 +1,4 @@
-var feld = "zahl1";
-var operation = "";
-
+var feld = "zahl1"; var operation = "";
 function Seven() { 
     let i = document.getElementById(feld).value;
     document.getElementById(feld).value = 10*i + 7;
@@ -109,26 +107,36 @@ function CalculateTerm(_str) {
     };
     objectList.push(temp);
     
-    let ergebnis = 0;
-    for (let index = 0; index < objectList.length; ++index) {
-        if (objectList[index] == "*") {
-            ergebnis = parseInt(objectList[index-1]) * parseInt(objectList[index+1]);
-            objectList.splice(index - 1, 3, ergebnis.toString());
+    let ergebnis = 0; let switched = false;
+    do {
+        switched = false;
+        for (let index = 0; index < objectList.length; ++index) {
+            if (objectList[index] == "*") {
+                ergebnis = parseInt(objectList[index-1]) * parseInt(objectList[index+1]);
+                objectList.splice(index - 1, 3, ergebnis.toString());
+                switched = true;
+            }
+            else if (objectList[index] == "/") {
+                ergebnis = parseInt(objectList[index-1]) / parseInt(objectList[index+1]);
+                objectList.splice(index - 1, 3, ergebnis.toString());
+                switched = true;
+            }
         }
-        else if (objectList[index] == "/") {
-            ergebnis = parseInt(objectList[index-1]) / parseInt(objectList[index+1]);
-            objectList.splice(index - 1, 3, ergebnis.toString());
+    } while (switched);
+    do { 
+        switched = false;
+        for (let index = 0; index < objectList.length; ++index) {
+            if (objectList[index] == "+") {
+                ergebnis = parseInt(objectList[index-1]) + parseInt(objectList[index+1]);
+                objectList.splice(index - 1, 3, ergebnis.toString());
+                switched = true;
+            }
+            else if (objectList[index] == "-") {
+                ergebnis = parseInt(objectList[index-1]) - parseInt(objectList[index+1]);
+                objectList.splice(index - 1, 3, ergebnis.toString());  
+                switched = true;
+            }
         }
-    }
-    for (let index = 0; index < objectList.length; ++index) {
-        if (objectList[index] == "+") {
-            ergebnis = parseInt(objectList[index-1]) + parseInt(objectList[index+1]);
-            objectList.splice(index - 1, 3, ergebnis.toString());
-        }
-        else if (objectList[index] == "-") {
-            ergebnis = parseInt(objectList[index-1]) - parseInt(objectList[index+1]);
-            objectList.splice(index - 1, 3, ergebnis.toString());  
-        }
-    }
+    } while (switched);
     return objectList[0];
 }

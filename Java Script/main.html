@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <script src="calculator.js"></script>
+</head>
+<body>
+    <img src="calculator.png" alt="Calculator" width="400px" usemap="#mymap">
+    <map name="mymap">
+        <area shape="rect" coords="20, 150, 120, 210" onclick="Seven()" alt="">
+        <area shape="rect" coords="120, 150, 220, 210" onclick="Eight()" alt="">
+        <area shape="rect" coords="220, 150, 320, 210" onclick="Nine()" alt="">
+        <area shape="rect" coords="320, 150, 420, 210" onclick="Divide()" alt="">
+
+        <area shape="rect" coords="20, 220, 120, 280" onclick="Four()" alt="">
+        <area shape="rect" coords="120, 220, 220, 280" onclick="Five()" alt="">
+        <area shape="rect" coords="220, 220, 320, 280" onclick="Six()" alt="">
+        <area shape="rect" coords="320, 220, 420, 280" onclick="Multiply()" alt="">
+
+        <area shape="rect" coords="20, 290, 120, 350" onclick="One()" alt="">
+        <area shape="rect" coords="120, 290, 220, 350" onclick="Two()" alt="">
+        <area shape="rect" coords="220, 290, 320, 350" onclick="Three()" alt="">
+        <area shape="rect" coords="320, 290, 420, 350" onclick="Subtract()" alt="">
+
+        <area shape="rect" coords="20, 360, 120, 420" onclick="Zero()" alt="">
+        <area shape="rect" coords="200, 360, 300, 420" onclick="Add()" alt="">
+        <area shape="rect" coords="300, 360, 400, 420" onclick="Calculate()" alt="">
+    </map>
+
+    <label for="zahl1">1. Zahl</label>
+    <input type="text" id="zahl1" name="zahl1">
+    <label for="zahl1">2. Zahl</label>
+    <input type="text" id="zahl2" name="zahl2">
+    <br><br>
+    
+    <input type="button" name="clear" onclick="Clear()" value="Clear">
+    <br><br>
+    <p style="position: absolute; top: 30px; left: 55px; font-size: larger;">
+        <input type="text" id="result" name="result" style="height: 40px; width: 290px; text-align: end; padding: 5px;">
+    </p>
+</body>
+</html>

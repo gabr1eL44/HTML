@@ -1,97 +1,36 @@
+
 var feld = "zahl1"; var operation = ""; var decimal = false; var negative = false; var opPressed = false;
-function Seven() { 
-    let i = document.getElementById(feld).value;
-    if (decimal || negative) {
-        document.getElementById(feld).value = i + "7";
-        negative = false;
+{
+    function Seven() {
+        AddToInput(7);
     }
-    else document.getElementById(feld).value = 10*i + 7;
-    UpdateDisplay(feld);
-    opPressed = false;
-}
-function Eight() { 
-    let i = document.getElementById(feld).value;
-    if (decimal || negative) {
-        document.getElementById(feld).value = i + "8";
-        negative = false;
+    function Eight() { 
+        AddToInput(8);
     }
-    else document.getElementById(feld).value = 10*i + 8;
-    UpdateDisplay(feld);
-    opPressed = false;
-}
-function Nine() { 
-    let i = document.getElementById(feld).value;
-    if (decimal || negative) {
-        document.getElementById(feld).value = i + "9";
-        negative = false;
+    function Nine() { 
+        AddToInput(9);
     }
-    else document.getElementById(feld).value = 10*i + 9;
-    UpdateDisplay(feld);
-    opPressed = false;
-}
-function Four() { 
-    let i = document.getElementById(feld).value;
-    if (decimal || negative) {
-        document.getElementById(feld).value = i + "4";
-        negative = false;
+    function Four() { 
+        AddToInput(4);
     }
-    else document.getElementById(feld).value = 10*i + 4;
-    UpdateDisplay(feld);
-    opPressed = false;
-}
-function Five() { 
-    let i = document.getElementById(feld).value;
-    if (decimal || negative) {
-        document.getElementById(feld).value = i + "5";
-        negative = false;
+    function Five() { 
+        AddToInput(5);
     }
-    else document.getElementById(feld).value = 10*i + 5;
-    UpdateDisplay(feld);
-    opPressed = false;
-}
-function Six() { 
-    let i = document.getElementById(feld).value;
-    if (decimal || negative) {
-        document.getElementById(feld).value = i + "6";
-        negative = false;
+    function Six() { 
+        AddToInput(6);
     }
-    else document.getElementById(feld).value = 10*i + 6;
-    UpdateDisplay(feld);
-    opPressed = false;
-}
- function One() { 
-    let i = document.getElementById(feld).value;
-    if (decimal || negative) {
-        document.getElementById(feld).value = i + "1";
+     function One() { 
+        AddToInput(1);
     }
-    else document.getElementById(feld).value = 10*i + 1;
-    UpdateDisplay(feld);
-}
-function Two() { 
-    let i = document.getElementById(feld).value;
-    if (decimal || negative) {
-        document.getElementById(feld).value = i + "2";
+    function Two() { 
+        AddToInput(2);
     }
-    else document.getElementById(feld).value = 10*i + 2;
-    UpdateDisplay(feld);
-}
-function Three() { 
-    let i = document.getElementById(feld).value;
-    if (decimal || negative) {
-        document.getElementById(feld).value = i + "3";
+    function Three() { 
+        AddToInput(3);
     }
-    else document.getElementById(feld).value = 10*i + 3;
-    UpdateDisplay(feld);
-    opPressed = false;
-}
-function Zero() { 
-    let i = document.getElementById(feld).value;
-    if (decimal || negative) {
-        document.getElementById(feld).value = i + "0";
+    function Zero() { 
+        AddToInput(0);
     }
-    else document.getElementById(feld).value = 10*i + 0;
-    UpdateDisplay(feld);
-    opPressed = false;
 }
 function Point() {
     let i = document.getElementById(feld).value;
@@ -105,53 +44,29 @@ function Point() {
     UpdateDisplay(feld);
     opPressed = false;
 }
-function Add() { 
-    if (!opPressed) {
-        if (feld == "zahl2")
-            GetNewElement();
-        else feld = "zahl2";
+{
+    function Add() { 
+        ProcessOperation("+");
     }
-    operation = "+";
-    decimal = false; negative = false; opPressed = true;
-}
-function Divide() { 
-    if (!opPressed) {
-        if (feld == "zahl2")
-            GetNewElement();
-        else feld = "zahl2";
+    function Divide() { 
+        ProcessOperation("/");
     }
-    operation = "/";
-    decimal = false; negative = false; opPressed = true;
-}
-function Multiply() { 
-    if (!opPressed) {
-        if (feld == "zahl2")
-            GetNewElement();
-        else feld = "zahl2";
+    function Multiply() { 
+        ProcessOperation("*");
     }
-    operation = "*";
-    decimal = false; negative = false; opPressed = true;
-}
-function Subtract() { 
-    let i = document.getElementById(feld).value;
-    if (i == "" && (!opPressed || feld == "zahl2")) {
-        document.getElementById(feld).value = "-";
-        negative = true;
-        UpdateDisplay(feld);
-    }
-    else if (i == "-") {
-        document.getElementById(feld).value = "";
-        negative = false;
-        UpdateDisplay(feld);
-    }
-    else {
-        if (!opPressed) {
-            if (feld == "zahl2")
-                GetNewElement();
-            else feld = "zahl2";
+    function Subtract() { 
+        let i = document.getElementById(feld).value;
+        if (i == "" && (!opPressed || feld == "zahl2")) {
+            document.getElementById(feld).value = "-";
+            negative = true;
+            UpdateDisplay(feld);
         }
-        operation = "m";
-        decimal = false; negative = false; opPressed = true;
+        else if (i == "-") {
+            document.getElementById(feld).value = "";
+            negative = false;
+            UpdateDisplay(feld);
+        }
+        else ProcessOperation("m");
     }
 }
 function Calculate() {
@@ -173,8 +88,8 @@ function GetNewElement() {
         + operation + document.getElementById("zahl2").value;
     document.getElementById("zahl2").value = "";
 }
-function UpdateDisplay(_feld) {
-    document.getElementById("result").value = document.getElementById(_feld).value;
+function UpdateDisplay() {
+    document.getElementById("result").value = document.getElementById(feld).value;
 }
 function CalculateTerm(_str) {
     let objectList = []; let temp = "";
@@ -223,4 +138,23 @@ function CalculateTerm(_str) {
         }
     } while (switched);
     return objectList[0];
+}
+function AddToInput(_number) {
+    let i = document.getElementById(feld).value;
+    if (decimal || negative) {
+        document.getElementById(feld).value = i + _number;
+        negative = false;
+    }
+    else document.getElementById(feld).value = 10*i + _number;
+    UpdateDisplay(feld);
+    opPressed = false;
+}
+function ProcessOperation(_operator) {
+    if (!opPressed) {
+        if (feld == "zahl2")
+            GetNewElement();
+        else feld = "zahl2";
+    }
+    operation = _operator;
+    decimal = false; negative = false; opPressed = true;
 }

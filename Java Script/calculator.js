@@ -1,4 +1,4 @@
-var feld = "zahl1"; var operation = ""; var decimal = false; var negative = false;
+var feld = "zahl1"; var operation = ""; var decimal = false; var negative = false; var opPressed = false;
 function Seven() { 
     let i = document.getElementById(feld).value;
     if (decimal || negative) {
@@ -7,6 +7,7 @@ function Seven() {
     }
     else document.getElementById(feld).value = 10*i + 7;
     UpdateDisplay(feld);
+    opPressed = false;
 }
 function Eight() { 
     let i = document.getElementById(feld).value;
@@ -16,6 +17,7 @@ function Eight() {
     }
     else document.getElementById(feld).value = 10*i + 8;
     UpdateDisplay(feld);
+    opPressed = false;
 }
 function Nine() { 
     let i = document.getElementById(feld).value;
@@ -25,6 +27,7 @@ function Nine() {
     }
     else document.getElementById(feld).value = 10*i + 9;
     UpdateDisplay(feld);
+    opPressed = false;
 }
 function Four() { 
     let i = document.getElementById(feld).value;
@@ -34,6 +37,7 @@ function Four() {
     }
     else document.getElementById(feld).value = 10*i + 4;
     UpdateDisplay(feld);
+    opPressed = false;
 }
 function Five() { 
     let i = document.getElementById(feld).value;
@@ -43,6 +47,7 @@ function Five() {
     }
     else document.getElementById(feld).value = 10*i + 5;
     UpdateDisplay(feld);
+    opPressed = false;
 }
 function Six() { 
     let i = document.getElementById(feld).value;
@@ -52,6 +57,7 @@ function Six() {
     }
     else document.getElementById(feld).value = 10*i + 6;
     UpdateDisplay(feld);
+    opPressed = false;
 }
  function One() { 
     let i = document.getElementById(feld).value;
@@ -76,6 +82,7 @@ function Three() {
     }
     else document.getElementById(feld).value = 10*i + 3;
     UpdateDisplay(feld);
+    opPressed = false;
 }
 function Zero() { 
     let i = document.getElementById(feld).value;
@@ -84,6 +91,7 @@ function Zero() {
     }
     else document.getElementById(feld).value = 10*i + 0;
     UpdateDisplay(feld);
+    opPressed = false;
 }
 function Point() {
     let i = document.getElementById(feld).value;
@@ -91,34 +99,42 @@ function Point() {
     if (i == "")
         document.getElementById(feld).value = "0.";
     else if (i == "-")
-    document.getElementById(feld).value = "-0.";
-    else document.getElementById(feld).value = i + ".";
+        document.getElementById(feld).value = "-0.";
+    else if (i[i.length - 1] != ".")
+        document.getElementById(feld).value = i + ".";
     UpdateDisplay(feld);
+    opPressed = false;
 }
 function Add() { 
-    if (feld == "zahl2")
-        GetNewElement();
-    else feld = "zahl2";
+    if (!opPressed) {
+        if (feld == "zahl2")
+            GetNewElement();
+        else feld = "zahl2";
+    }
     operation = "+";
-    decimal = false;
+    decimal = false; negative = false; opPressed = true;
 }
 function Divide() { 
-    if (feld == "zahl2")
-        GetNewElement();
-    else feld = "zahl2";
+    if (!opPressed) {
+        if (feld == "zahl2")
+            GetNewElement();
+        else feld = "zahl2";
+    }
     operation = "/";
-    decimal = false;
+    decimal = false; negative = false; opPressed = true;
 }
 function Multiply() { 
-    if (feld == "zahl2")
-        GetNewElement();
-    else feld = "zahl2";
+    if (!opPressed) {
+        if (feld == "zahl2")
+            GetNewElement();
+        else feld = "zahl2";
+    }
     operation = "*";
-    decimal = false; negative = false;
+    decimal = false; negative = false; opPressed = true;
 }
 function Subtract() { 
     let i = document.getElementById(feld).value;
-    if (i == "") {
+    if (i == "" && (!opPressed || feld == "zahl2")) {
         document.getElementById(feld).value = "-";
         negative = true;
         UpdateDisplay(feld);
@@ -129,12 +145,13 @@ function Subtract() {
         UpdateDisplay(feld);
     }
     else {
-
-        if (feld == "zahl2")
-            GetNewElement();
-        else feld = "zahl2";
+        if (!opPressed) {
+            if (feld == "zahl2")
+                GetNewElement();
+            else feld = "zahl2";
+        }
         operation = "m";
-        decimal = false;
+        decimal = false; negative = false; opPressed = true;
     }
 }
 function Calculate() {
@@ -148,7 +165,8 @@ function Clear() {
     document.getElementById("zahl2").value = "";
     document.getElementById("result").value = "";
     feld = "zahl1";
-    operation = "";
+    operation = ""; 
+    decimal = false; negative = false; opPressed = false;
 }
 function GetNewElement() {
     document.getElementById("zahl1").value = document.getElementById("zahl1").value

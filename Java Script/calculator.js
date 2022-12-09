@@ -1,3 +1,4 @@
+
 var feld = "zahl1"; var operation = ""; var decimal = false; var negative = false; var opPressed = false;
 { // Process Number Inputs
     function Seven() {

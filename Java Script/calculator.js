@@ -1,71 +1,87 @@
-var feld = "zahl1"; var operation = ""; var decimal = false;
+var feld = "zahl1"; var operation = ""; var decimal = false; var negative = false;
 function Seven() { 
     let i = document.getElementById(feld).value;
-    if (decimal)
+    if (decimal || negative) {
         document.getElementById(feld).value = i + "7";
-    else document.getElementById(feld).value = 10*i + 72;
+        negative = false;
+    }
+    else document.getElementById(feld).value = 10*i + 7;
     UpdateDisplay(feld);
 }
 function Eight() { 
     let i = document.getElementById(feld).value;
-    if (decimal)
+    if (decimal || negative) {
         document.getElementById(feld).value = i + "8";
+        negative = false;
+    }
     else document.getElementById(feld).value = 10*i + 8;
     UpdateDisplay(feld);
 }
 function Nine() { 
     let i = document.getElementById(feld).value;
-    if (decimal)
+    if (decimal || negative) {
         document.getElementById(feld).value = i + "9";
+        negative = false;
+    }
     else document.getElementById(feld).value = 10*i + 9;
     UpdateDisplay(feld);
 }
 function Four() { 
     let i = document.getElementById(feld).value;
-    if (decimal)
+    if (decimal || negative) {
         document.getElementById(feld).value = i + "4";
+        negative = false;
+    }
     else document.getElementById(feld).value = 10*i + 4;
     UpdateDisplay(feld);
 }
 function Five() { 
     let i = document.getElementById(feld).value;
-    if (decimal)
+    if (decimal || negative) {
         document.getElementById(feld).value = i + "5";
+        negative = false;
+    }
     else document.getElementById(feld).value = 10*i + 5;
     UpdateDisplay(feld);
 }
 function Six() { 
     let i = document.getElementById(feld).value;
-    if (decimal)
+    if (decimal || negative) {
         document.getElementById(feld).value = i + "6";
+        negative = false;
+    }
     else document.getElementById(feld).value = 10*i + 6;
     UpdateDisplay(feld);
 }
  function One() { 
     let i = document.getElementById(feld).value;
-    if (decimal)
+    if (decimal || negative) {
         document.getElementById(feld).value = i + "1";
+    }
     else document.getElementById(feld).value = 10*i + 1;
     UpdateDisplay(feld);
 }
 function Two() { 
     let i = document.getElementById(feld).value;
-    if (decimal)
+    if (decimal || negative) {
         document.getElementById(feld).value = i + "2";
+    }
     else document.getElementById(feld).value = 10*i + 2;
     UpdateDisplay(feld);
 }
 function Three() { 
     let i = document.getElementById(feld).value;
-    if (decimal)
+    if (decimal || negative) {
         document.getElementById(feld).value = i + "3";
+    }
     else document.getElementById(feld).value = 10*i + 3;
     UpdateDisplay(feld);
 }
 function Zero() { 
     let i = document.getElementById(feld).value;
-    if (decimal)
+    if (decimal || negative) {
         document.getElementById(feld).value = i + "0";
+    }
     else document.getElementById(feld).value = 10*i + 0;
     UpdateDisplay(feld);
 }
@@ -96,14 +112,22 @@ function Multiply() {
         GetNewElement();
     else feld = "zahl2";
     operation = "*";
-    decimal = false;
+    decimal = false; negative = false;
 }
 function Subtract() { 
-    if (feld == "zahl2")
-        GetNewElement();
-    else feld = "zahl2";
-    operation = "-";
-    decimal = false;
+    let i = document.getElementById(feld).value;
+    if (i == "") {
+        document.getElementById(feld).value = "-";
+        negative = true;
+        UpdateDisplay(feld);
+    }
+    else {
+        if (feld == "zahl2")
+            GetNewElement();
+        else feld = "zahl2";
+        operation = "m";
+        decimal = false;
+    }
 }
 function Calculate() {
     document.getElementById("result").value = CalculateTerm(document.getElementById("zahl1").value + operation + document.getElementById("zahl2").value);
@@ -129,11 +153,13 @@ function UpdateDisplay(_feld) {
 function CalculateTerm(_str) {
     let objectList = []; let temp = "";
     for (const element of _str) {
-        if (element != "+" && element != "-" && element != "*" && element != "/")
+        if (element != "+" && element != "m" && element != "*" && element != "/")
             temp += element;
         else {
             objectList.push(temp);
-            objectList.push(element);
+            if (element == "m")
+                objectList.push("-");
+            else objectList.push(element);
             temp = "";
         }
     };

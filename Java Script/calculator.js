@@ -158,7 +158,7 @@ function Calculate() {
     document.getElementById("result").value = CalculateTerm(document.getElementById("zahl1").value + operation + document.getElementById("zahl2").value);
     document.getElementById("zahl2").value = "";
     document.getElementById("zahl1").value = document.getElementById("result").value;
-    operation = "";
+    operation = ""; feld = "zahl1";
 }
 function Clear() {
     document.getElementById("zahl1").value = "";

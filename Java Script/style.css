@@ -2,13 +2,13 @@ p.display {
     position: absolute; 
     top: 30px;
     left: 50px; 
-    font-size: larger;
 }
 #result {
     height: 50px; 
     width: 300px; 
     text-align: end; 
     padding-right: 10px;
+    font-size: 18pt;
 }
 #button {
     border-radius: 3px;

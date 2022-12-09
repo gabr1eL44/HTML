@@ -1,6 +1,6 @@
 
 var feld = "zahl1"; var operation = ""; var decimal = false; var negative = false; var opPressed = false;
-{
+{ // Process Number Inputs
     function Seven() {
         AddToInput(7);
     }
@@ -44,7 +44,7 @@ function Point() {
     UpdateDisplay(feld);
     opPressed = false;
 }
-{
+{ // Process Operations
     function Add() { 
         ProcessOperation("+");
     }
@@ -66,7 +66,13 @@ function Point() {
             negative = false;
             UpdateDisplay(feld);
         }
-        else ProcessOperation("m");
+        else {
+            if (negative) {
+                ProcessOperation("m");
+                negative = true;
+            }
+            else ProcessOperation("m");
+        }
     }
 }
 function Calculate() {
@@ -145,7 +151,7 @@ function AddToInput(_number) {
         document.getElementById(feld).value = i + _number;
         negative = false;
     }
-    else document.getElementById(feld).value = 10*i + _number;
+    else document.getElementById(feld).value = i + _number.toString();
     UpdateDisplay(feld);
     opPressed = false;
 }

@@ -112,12 +112,12 @@ function CalculateTerm(_str) {
         switched = false;
         for (let index = 0; index < objectList.length; ++index) {
             if (objectList[index] == "*") {
-                ergebnis = parseInt(objectList[index-1]) * parseInt(objectList[index+1]);
+                ergebnis = parseFloat(objectList[index-1]) * parseFloat(objectList[index+1]);
                 objectList.splice(index - 1, 3, ergebnis.toString());
                 switched = true;
             }
             else if (objectList[index] == "/") {
-                ergebnis = parseInt(objectList[index-1]) / parseInt(objectList[index+1]);
+                ergebnis = parseFloat(objectList[index-1]) / parseFloat(objectList[index+1]);
                 objectList.splice(index - 1, 3, ergebnis.toString());
                 switched = true;
             }
@@ -127,12 +127,12 @@ function CalculateTerm(_str) {
         switched = false;
         for (let index = 0; index < objectList.length; ++index) {
             if (objectList[index] == "+") {
-                ergebnis = parseInt(objectList[index-1]) + parseInt(objectList[index+1]);
+                ergebnis = parseFloat(objectList[index-1]) + parseFloat(objectList[index+1]);
                 objectList.splice(index - 1, 3, ergebnis.toString());
                 switched = true;
             }
             else if (objectList[index] == "-") {
-                ergebnis = parseInt(objectList[index-1]) - parseInt(objectList[index+1]);
+                ergebnis = parseFloat(objectList[index-1]) - parseFloat(objectList[index+1]);
                 objectList.splice(index - 1, 3, ergebnis.toString());  
                 switched = true;
             }

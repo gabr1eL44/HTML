@@ -9,9 +9,11 @@ p.display {
     text-align: end; 
     padding-right: 10px;
     font-size: 18pt;
+    box-shadow:inset 0 0 5px 5px #888;
 }
 #button {
     margin-left: 10px;
     border-radius: 3px;
     padding: 6px;
+    box-shadow:inset 0 0 5px 5px #888;
 }

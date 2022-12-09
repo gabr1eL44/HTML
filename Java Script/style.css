@@ -11,6 +11,7 @@ p.display {
     font-size: 18pt;
 }
 #button {
+    margin-left: 12px;
     border-radius: 3px;
     padding: 6px;
 }

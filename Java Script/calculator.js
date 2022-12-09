@@ -89,7 +89,9 @@ function Point() {
     let i = document.getElementById(feld).value;
     decimal = true;
     if (i == "")
-        document.getElementById(feld).value = 0 + ".";
+        document.getElementById(feld).value = "0.";
+    else if (i == "-")
+    document.getElementById(feld).value = "-0.";
     else document.getElementById(feld).value = i + ".";
     UpdateDisplay(feld);
 }
@@ -121,7 +123,13 @@ function Subtract() {
         negative = true;
         UpdateDisplay(feld);
     }
+    else if (i == "-") {
+        document.getElementById(feld).value = "";
+        negative = false;
+        UpdateDisplay(feld);
+    }
     else {
+
         if (feld == "zahl2")
             GetNewElement();
         else feld = "zahl2";

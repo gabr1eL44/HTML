@@ -29,7 +29,8 @@ var feld = "zahl1"; var operation = ""; var decimal = false; var negative = fals
         AddToInput(3);
     }
     function Zero() { 
-        AddToInput(0);
+        if (document.getElementById(feld).value != "0")
+            AddToInput(0);
     }
 }
 function Point() {

@@ -5,9 +5,9 @@ p.display {
 }
 #result {
     height: 50px; 
-    width: 295px; 
+    width: 300px; 
     text-align: end; 
-    padding-right: 15px;
+    padding-right: 10px;
     font-size: 18pt;
     box-shadow:inset 0 0 5px 5px #888;
 }
@@ -15,5 +15,5 @@ p.display {
     margin-left: 10px;
     border-radius: 3px;
     padding: 6px;
-    box-shadow:inset 0 0 3px 3px #888;
+    box-shadow:inset 0 0 1px 1px #888;
 }

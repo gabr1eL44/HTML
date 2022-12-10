@@ -1,3 +1,4 @@
+
 var feld = "zahl1"; var operation = ""; var decimal = false; var negative = false; var opPressed = false;
 { // Process Number Inputs
     function Seven() {
@@ -151,8 +152,8 @@ function AddToInput(_number) {
         negative = false;
     }
     else document.getElementById(feld).value = i + _number.toString();
-    UpdateDisplay(feld);
     opPressed = false;
+    UpdateDisplay(feld);
 }
 function ProcessOperation(_operator) {
     if (!opPressed) {

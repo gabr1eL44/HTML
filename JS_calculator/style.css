@@ -1,0 +1,20 @@
+p.display {
+    position: absolute; 
+    top: 32px;
+    left: 50px; 
+}
+#result {
+    height: 50px; 
+    width: 290px; 
+    text-align: end; 
+    padding-right: 10px;
+    padding-left: 10px;
+    font-size: 18pt;
+    box-shadow:inset 0 0 5px 5px #888;
+}
+#button {
+    margin-left: 10px;
+    border-radius: 3px;
+    padding: 6px;
+    box-shadow:inset 0 0 2px 2px #888;
+}
